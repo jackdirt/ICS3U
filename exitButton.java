@@ -8,21 +8,21 @@ package Summative;
 
 
 
-import	lejos.nxt.Button;
+import	lejos.nxt.Button; //importing all needed code
 import lejos.robotics.subsumption.Behavior;
 
-public class exitButton implements Behavior {
+public class exitButton implements Behavior { 
 	
-	private boolean supressed = false;
+	private boolean supressed = false; //suppression
 	
-	public boolean takeControl() { 
-		if(Button.ESCAPE.isDown()){
+	public boolean takeControl() {  //what causes the code to activate
+		if(Button.ESCAPE.isDown()){ //this happens when the button is pressed
 			return true;
 		}
 		return false;
 	}
 	public void action(){
-		System.exit(0);
+		System.exit(0); //what happens when this code takes control (ends program)
 	}
 
 	@Override

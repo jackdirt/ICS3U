@@ -18,19 +18,19 @@ TouchSensor contact2 = new TouchSensor(SensorPort.S3);
 UltrasonicSensor Sonic = new UltrasonicSensor(SensorPort.S1);
 
 
-public boolean takeControl() { 
+public boolean takeControl() { //takes control when the second touch sensor is touched
 	if(contact2.isPressed()){
 		return true;
 	}
 	return false;
 }
 public void action(){
-	Sound.setVolume(1000);
-	int distance = Sonic.getDistance();
+	Sound.setVolume(1000); //sets volume
+	int distance = Sonic.getDistance(); //determines thew distance from the slider
 	int pitch  = 0;
 	if (distance <= 3){
 		pitch = 1;
-	}else if(distance <= 6){
+	}else if(distance <= 6){ //Assigns a numeral value to the distances
 		pitch = 2;
 	}else if(distance <= 9){
 		pitch = 3;
@@ -40,7 +40,7 @@ public void action(){
 		pitch = 5;
 	}
 	if (pitch == 1){
-		while (contact2.isPressed()){
+		while (contact2.isPressed()){ //produces a sound based on the distance using a piano scale 
 		Sound.playNote(Sound.PIANO, 131, 400);
 		}
 	}else if(pitch == 2){

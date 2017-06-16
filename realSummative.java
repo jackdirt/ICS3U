@@ -99,15 +99,15 @@ public class realSummative {
 					pitch = 5;
 				}
 				if (pitch == 1){
-					Sound.playNote(Sound.FLUTE, 587, 600);
+					Sound.playNote(Sound.FLUTE, 73, 300);
 				}else if(pitch == 2){
-					Sound.playNote(Sound.FLUTE, 659, 600);
+					Sound.playNote(Sound.FLUTE, 82, 300);
 				}else if(pitch == 3){
-					Sound.playNote(Sound.FLUTE, 698, 600);
+					Sound.playNote(Sound.FLUTE, 87, 300);
 				}else if(pitch == 4){
-					Sound.playNote(Sound.FLUTE, 784, 600);
+					Sound.playNote(Sound.FLUTE, 98, 300);
 				}else{
-					Sound.playNote(Sound.FLUTE, 880, 600);
+					Sound.playNote(Sound.FLUTE, 110, 300);
 				}
 			}		
 			if(Button.ESCAPE.isDown()){

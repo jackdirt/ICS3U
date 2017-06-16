@@ -15,21 +15,21 @@ import lejos.nxt.UltrasonicSensor;
 
 
 public class touchsensor1 implements Behavior {
-TouchSensor contact1 = new TouchSensor(SensorPort.S2);
+TouchSensor contact1 = new TouchSensor(SensorPort.S2); //makes a variable for a touch sensor
 UltrasonicSensor Sonic = new UltrasonicSensor(SensorPort.S1);
 
 
-public boolean takeControl() { 
+public boolean takeControl() {   //takes control when a touch sensor is pressed
 	if(contact1.isPressed()){
 		return true;
 	}
 	return false;
 }
 public void action(){
-	Sound.setVolume(1000);
-	int distance = Sonic.getDistance();
+	Sound.setVolume(1000); // defines the volume of the robot
+	int distance = Sonic.getDistance(); //reads the distance between the slider and the sensor
 	int pitch  = 0;
-	if (distance <= 3){
+	if (distance <= 3){ //assigns a variable to set distances
 		pitch = 1;
 	}else if(distance <= 6){
 		pitch = 2;
@@ -42,7 +42,7 @@ public void action(){
 	}
 	if (pitch == 1){
 		while (contact1.isPressed()){
-		Sound.playNote(Sound.XYLOPHONE, 131, 400);
+		Sound.playNote(Sound.XYLOPHONE, 131, 400); //produces a pitch based on the distance using a xylophone scale 
 		}
 	}else if(pitch == 2){
 		while (contact1.isPressed()){
@@ -62,7 +62,7 @@ public void action(){
 		}
 	}
 }
-public void suppress(){
+public void suppress(){ //no suppressions
 	
 }
 
